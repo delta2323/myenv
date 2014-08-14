@@ -1,0 +1,6 @@
+escape ^t^t
+startup_message off
+vbell off
+bind w windowlist -b
+hardstatus alwayslastline I%wI
+bindkey '^@' backward-delete-char
