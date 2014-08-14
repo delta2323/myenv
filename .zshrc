@@ -100,6 +100,7 @@ autoload zed
 # expand aliases before completing
 setopt complete_aliases     # aliased ls needs if file/dir completions work
 
+alias la="ls -a"
 alias su="su -l"
 alias e="emacs -nw"
 
