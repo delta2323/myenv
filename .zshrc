@@ -14,16 +14,12 @@ zstyle ":vcs_info:*" max-exports 6
 
 if is-at-least 4.3.10; then
     zstyle ":vcs_info:git:*" check-for-changes true
-    zstyle ":vcs_info:git:*" stagedstr "<S>"
-    zstyle ":vcs_info:git:*" unstagedstr "<U>"
-    zstyle ":vcs_info:git:*" formats "(%b) %c%u"
-    zstyle ":vcs_info:git:*" actionformats "(%s)-[%b|%a] %c%u"
+    zstyle ":vcs_info:git:*" stagedstr "S"
+    zstyle ":vcs_info:git:*" unstagedstr "U"
+    zstyle ":vcs_info:git:*" formats "%F{yellow}(%b)[%c%u]%f "
+    zstyle ":vcs_info:git:*" actionformats "(%s)-[%b|%a] %c%u "
 fi
 
-function vcs_prompt_info() {
-    LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && echo -n " %{$fg[yellow]%}$vcs_info_msg_0_%f"
-}
 # end VCS
 
 # set terminal title including current directory
@@ -53,9 +49,10 @@ esac
 PROMPT+="
 "
 PROMPT+="%(?.%F{green}%%%f.%F{red}%%%f)"
-PROMPT+="$(vcs_prompt_info)"
+PROMPT+='${vcs_info_msg_0_}'
 
 RPROMPT+="[%*]"
+
 
 setopt auto_cd
 setopt auto_pushd
