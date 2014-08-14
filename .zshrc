@@ -3,6 +3,7 @@ autoload -Uz vcs_info
 autoload -Uz is-at-least
 
 # begin VCS
+setopt prompt_subst
 zstyle ":vcs_info:*" enable git svn hg bzr
 zstyle ":vcs_info:*" formats "(%s)-[%b]"
 zstyle ":vcs_info:*" actionformats "(%s)-[%b|%a]"
