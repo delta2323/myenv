@@ -16,8 +16,8 @@ if is-at-least 4.3.10; then
     zstyle ":vcs_info:git:*" check-for-changes true
     zstyle ":vcs_info:git:*" stagedstr "S"
     zstyle ":vcs_info:git:*" unstagedstr "U"
-    zstyle ":vcs_info:git:*" formats "%F{yellow}(%b)[%c%u]%f "
-    zstyle ":vcs_info:git:*" actionformats "(%s)-[%b|%a] %c%u "
+    zstyle ":vcs_info:git:*" formats "%F{yellow}(%b)[%c%u]%f"
+    zstyle ":vcs_info:git:*" actionformats "(%s)-[%b|%a] %c%u"
 fi
 
 # end VCS
