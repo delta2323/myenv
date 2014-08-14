@@ -7,6 +7,8 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/haskell-mode/")
 
+(global-set-key "\C-h" 'delete-backward-char)
+
 (require 'flymake)
 
 (load "haskell-site-file")
@@ -70,7 +72,6 @@
 
 ))
 
-(global-set-key "\C-h" 'delete-backward-char)
 
 ;(require 'linum)
 ;(global-linum-mode)
