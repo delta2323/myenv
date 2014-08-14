@@ -93,6 +93,7 @@ autoload zed
 setopt complete_aliases     # aliased ls needs if file/dir completions work
 
 alias su="su -l"
+alias e="emacs -nw"
 
 ## terminal configuration
 case "${TERM}" in

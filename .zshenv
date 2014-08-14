@@ -6,3 +6,4 @@ case ${UID} in
     ;;
 esac
 
+EDITOR=emacs
