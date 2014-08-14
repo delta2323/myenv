@@ -1,6 +1,31 @@
+autoload -Uz colors; colors
+autoload -Uz vcs_info
+autoload -Uz is-at-least
+
+# begin VCS
+zstyle ":vcs_info:*" enable git svn hg bzr
+zstyle ":vcs_info:*" formats "(%s)-[%b]"
+zstyle ":vcs_info:*" actionformats "(%s)-[%b|%a]"
+zstyle ":vcs_info:(svn|bzr):*" branchformat "%b:r%r"
+zstyle ":vcs_info:bzr:*" use-simple true
+
+zstyle ":vcs_info:*" max-exports 6
+
+if is-at-least 4.3.10; then
+    zstyle ":vcs_info:git:*" check-for-changes true
+    zstyle ":vcs_info:git:*" stagedstr "<S>"
+    zstyle ":vcs_info:git:*" unstagedstr "<U>"
+    zstyle ":vcs_info:git:*" formats "(%b) %c%u"
+    zstyle ":vcs_info:git:*" actionformats "(%s)-[%b|%a] %c%u"
+fi
+
+function vcs_prompt_info() {
+    LANG=en_US.UTF-8 vcs_info
+    [[ -n "$vcs_info_msg_0_" ]] && echo -n " %{$fg[yellow]%}$vcs_info_msg_0_%f"
+}
+# end VCS
+
 # set prompt
-autoload colors
-colors
 case ${UID} in
 0)
     PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') %B%{${fg[red]}%}%/#%{${reset_color}%}%b "
@@ -15,6 +40,13 @@ case ${UID} in
         PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
     ;;
 esac
+# add vcs infomation (if current directory under vcs)
+PROMPT+="
+"
+PROMPT+="%(?.%F{green}%%%f.%F{red}%%%f)"
+PROMPT+="$(vcs_prompt_info)"
+
+RPROMPT+="[%*]"
 
 setopt auto_cd
 setopt auto_pushd
@@ -58,21 +90,9 @@ autoload zed
 #autoload predict-on
 #predict-off
 
-
 ## Alias configuration
-#
 # expand aliases before completing
-#
 setopt complete_aliases     # aliased ls needs if file/dir completions work
-
-case "${OSTYPE}" in
-freebsd*|darwin*)
-    alias ls="ls -G -w"
-    ;;
-linux*)
-    alias ls="ls --color"
-    ;;
-esac
 
 alias su="su -l"
 
@@ -83,8 +103,18 @@ screen)
     ;;
 esac
 
+# ls-related settings
+case "${OSTYPE}" in
+freebsd*|darwin*)
+    alias ls="ls -G -w"
+    ;;
+linux*)
+    alias ls="ls --color"
+    ;;
+esac
+
 case "${TERM}" in
-xterm|xterm-color)
+xterm|xterm-color|xterm-256color)
     export LSCOLORS=gxfxcxdxbxegedabagacad
     export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
     zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
@@ -113,13 +143,14 @@ esac
 
 # set terminal title including current directory
 case "${TERM}" in
-xterm|xterm-color|kterm|kterm-color)
+xterm|xterm-color|xterm-256color|kterm|kterm-color)
     precmd() {
         echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
     }
     ;;
 esac
 
+function chpwd() { ls }
 
 ## load user .zshrc configuration file
 [ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mine
