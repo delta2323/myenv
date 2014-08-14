@@ -26,6 +26,16 @@ function vcs_prompt_info() {
 }
 # end VCS
 
+# set terminal title including current directory
+case "${TERM}" in
+xterm|xterm-color|xterm-256color|kterm|kterm-color)
+    precmd() {
+        echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
+	vcs_info
+    }
+    ;;
+esac
+
 # set prompt
 case ${UID} in
 0)
@@ -138,15 +148,6 @@ jfbterm-color)
     export LSCOLORS=gxFxCxdxBxegedabagacad
     export LS_COLORS='di=01;36:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
     zstyle ':completion:*' list-colors 'di=;36;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
-    ;;
-esac
-
-# set terminal title including current directory
-case "${TERM}" in
-xterm|xterm-color|xterm-256color|kterm|kterm-color)
-    precmd() {
-        echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
-    }
     ;;
 esac
 
