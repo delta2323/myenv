@@ -6,7 +6,3 @@ case ${UID} in
     ;;
 esac
 
-# for golang
-export GOROOT=$HOME/go
-export GOPATH=$HOME/dev/go
-PATH=$GOPATH/bin:$GOROOT/bin:$PATH
