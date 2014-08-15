@@ -20,5 +20,5 @@ Usage
 $ cd $HOME
 $ git clone git@github.com:delta2323/myenv.git
 $ cd myenv
-$ cd bash init.sh
+$ bash init.sh
 ```
