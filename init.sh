@@ -11,7 +11,9 @@ function symlink() {
     return 0
 }
 
-chsh -s `which zsh`
+if [ "$SHELL" != "`which zsh`" ]; then
+    chsh -s `which zsh`
+fi
 
 symlink .emacs
 symlink .emacs.d
