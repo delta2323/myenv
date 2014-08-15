@@ -19,5 +19,5 @@ symlink .emacs
 symlink .emacs.d
 symlink .zshenv
 symlink .zshrc
-symlink .zshrc.mine
+# symlink .zshrc.mine
 symlink .gitignore
