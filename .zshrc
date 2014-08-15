@@ -27,6 +27,7 @@ case "${TERM}" in
 xterm|xterm-color|xterm-256color|kterm|kterm-color)
     precmd() {
         echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
+	LANG=en_US.UTF-8
 	vcs_info
     }
     ;;
