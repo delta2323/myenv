@@ -21,3 +21,4 @@ symlink .zshenv
 symlink .zshrc
 # symlink .zshrc.mine
 symlink .gitignore
+symlink .screenrc
