@@ -11,6 +11,14 @@ function symlink() {
     return 0
 }
 
+function hard_copy() {
+    if [ -f $HOME/$1 ]; then
+	return 0
+    fi
+    cp $HOME/myenv/$1 $HOME/$1
+    return 0
+}
+
 if [ "$SHELL" != "`which zsh`" ]; then
     chsh -s `which zsh`
 fi
@@ -19,6 +27,7 @@ symlink .emacs
 symlink .emacs.d
 symlink .zshenv
 symlink .zshrc
-# symlink .zshrc.mine
 symlink .gitignore
 symlink .screenrc
+
+hard_copy .zshrc.local
