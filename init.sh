@@ -14,6 +14,7 @@ function symlink() {
 chsh -s `which zsh`
 
 symlink .emacs
+symlink .emacs.d
 symlink .zshenv
 symlink .zshrc
 symlink .zshrc.mine
