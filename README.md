@@ -6,7 +6,7 @@ My environment settings.
 Disclaimer
 -------------
 
-- init script is under development and intended to be personal use for now. We would like users to use them at your own risk.
+- init script is under development is intended to be personal use for now. We would like users to use them at your own risk.
 
 On RC Files
 -------------
