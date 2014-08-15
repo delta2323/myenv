@@ -8,3 +8,4 @@
 *.out
 *.elc
 *.dat
+.loaddefs.el
