@@ -51,7 +51,7 @@ PROMPT+="
 PROMPT+="%(?.%F{green}%%%f.%F{red}%%%f)"
 PROMPT+='${vcs_info_msg_0_}'
 
-RPROMPT+="[%*]"
+RPROMPT="[%*]"
 
 
 setopt auto_cd
