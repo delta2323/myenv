@@ -3,12 +3,5 @@ export GOROOT=$HOME/go
 export GOPATH=$HOME/dev/go
 PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
-## pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-## rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-if which pyenv > /dev/null; then eval "$(ryenv init -)"; fi
-
 export PATH=$PATH:$HOME/local/bin
 export PREFIX=$HOME/local:$PREFIX

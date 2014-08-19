@@ -31,3 +31,13 @@ symlink .gitignore
 symlink .screenrc
 
 hard_copy .zshrc.local
+
+#pyenv
+cd $HOME
+git clone git://github.com/yyuu/pyenv.git .pyenv
+exec $SHELL
+
+#rbenv
+cd $HOME
+git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+exec $SHELL
