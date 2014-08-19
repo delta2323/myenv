@@ -160,7 +160,7 @@ fi
 
 ## rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
-if which pyenv > /dev/null; then eval "$(ryenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ## load user .zshrc configuration file
 [ -f ${HOME}/.zshrc.local ] && source ${HOME}/.zshrc.local

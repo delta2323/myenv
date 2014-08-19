@@ -38,6 +38,5 @@ git clone https://github.com/yyuu/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyen
 exec $SHELL
 
 #rbenv
-cd $HOME
-git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+git clone https://github.com/sstephenson/rbenv.git $HOME/.rbenv
 exec $SHELL
