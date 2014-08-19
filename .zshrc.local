@@ -3,5 +3,5 @@ export GOROOT=$HOME/go
 export GOPATH=$HOME/dev/go
 PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
-export PATH=$PATH:$HOME/local/bin
-export PREFIX=$HOME/local:$PREFIX
+export PATH=$HOME/local/bin:$HOME/.local/bin:$PATH
+export PREFIX=$HOME/local:$HOME/.local:$PREFIX
