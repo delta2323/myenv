@@ -34,6 +34,7 @@ hard_copy .zshrc.local
 
 #pyenv
 git clone git://github.com/yyuu/pyenv.git $HOME/.pyenv
+git clone https://github.com/yyuu/pyenv-pip-rehash.git $HOME/.pyenv/plugins/pyenv-pip-rehash
 git clone https://github.com/yyuu/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
 exec $SHELL
 
