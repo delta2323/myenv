@@ -150,5 +150,17 @@ jfbterm-color)
     ;;
 esac
 
+## pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if which pyenv > /dev/null; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+
+## rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 ## load user .zshrc configuration file
 [ -f ${HOME}/.zshrc.local ] && source ${HOME}/.zshrc.local
