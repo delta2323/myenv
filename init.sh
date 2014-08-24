@@ -36,8 +36,8 @@ hard_copy .zshrc.local
 git clone git://github.com/yyuu/pyenv.git $HOME/.pyenv
 git clone https://github.com/yyuu/pyenv-pip-rehash.git $HOME/.pyenv/plugins/pyenv-pip-rehash
 git clone https://github.com/yyuu/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
-exec $SHELL
 
 #rbenv
 git clone https://github.com/sstephenson/rbenv.git $HOME/.rbenv
+git clone https://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build
 exec $SHELL
