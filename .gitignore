@@ -6,6 +6,4 @@
 *.bbl
 *.blg
 *.out
-*.elc
-*.dat
-.loaddefs.el
+.emacs.d/
