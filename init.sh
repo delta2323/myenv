@@ -37,6 +37,12 @@ git clone git://github.com/yyuu/pyenv.git $HOME/.pyenv
 git clone https://github.com/yyuu/pyenv-pip-rehash.git $HOME/.pyenv/plugins/pyenv-pip-rehash
 git clone https://github.com/yyuu/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
 
+pyenv install 2.7.9
+pyenv install 3.4.3
+exec $SHELL
+pyenv virtualenv 2.7.9 pyenv-2.7.9
+pyenv virtualenv 3.4.3 pyenv-3.4.3
+
 #rbenv
 git clone https://github.com/sstephenson/rbenv.git $HOME/.rbenv
 git clone https://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build
