@@ -39,7 +39,7 @@ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> $HOME/.zshrc.local
 echo 'eval "$(pyenv init -)"' >> $HOME/.zshrc.local
 source ~/.zshrc
 
-pyenv install anaconda3-4.3.0
+yes | pyenv install anaconda3-4.3.0
 pyenv rehash
 pyenv global anaconda3-4.3.0
 echo 'export PATH="$PYENV_ROOT/versions/anaconda3-2.5.0/bin/:$PATH"' >> $HOME/.zshrc.local
