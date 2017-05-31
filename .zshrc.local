@@ -5,5 +5,3 @@ PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 export PATH=$HOME/local/bin:$HOME/.local/bin:$PATH
 export PREFIX=$HOME/local:$HOME/.local:$PREFIX
-
-source activate anaconda3
