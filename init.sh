@@ -32,6 +32,9 @@ symlink .screenrc
 
 hard_copy .zshrc.local
 
+git config --global user.email "oono@preferred.jp"
+git config --global user.name "Kenta Oono"
+
 #pyenv
 git clone https://github.com/yyuu/pyenv.git $HOME/.pyenv
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> $HOME/.zshrc.local
