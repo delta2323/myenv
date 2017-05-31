@@ -165,6 +165,3 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 [ -f ${HOME}/.zshrc.local ] && source ${HOME}/.zshrc.local
 
 
-export PATH=/home/delta/torch/install/bin:$PATH  # Added automatically by torch-dist
-export LD_LIBRARY_PATH=/home/delta/torch/install/lib:$LD_LIBRARY_PATH  # Added automatically by torch-dist
-export DYLD_LIBRARY_PATH=/home/delta/torch/install/lib:$DYLD_LIBRARY_PATH  # Added automatically by torch-dist
