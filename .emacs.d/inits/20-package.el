@@ -15,6 +15,7 @@
     google-c-style
     yaml-mode
     open-junk-file
+    cython-mode
     ))
 
 (let ((not-installed (loop for x in installing-package-list

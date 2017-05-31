@@ -46,13 +46,13 @@ case ${UID} in
         PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
     ;;
 esac
+PROMPT+="[%*]"
 # add vcs infomation (if current directory under vcs)
 PROMPT+="
 "
 PROMPT+="%(?.%F{green}%%%f.%F{red}%%%f)"
 PROMPT+='${vcs_info_msg_0_}'
 
-RPROMPT="[%*]"
 
 
 setopt auto_cd
@@ -154,8 +154,7 @@ esac
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 if which pyenv > /dev/null; then
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
+    eval "$(pyenv init -)"
 fi
 
 ## rbenv
@@ -164,3 +163,8 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ## load user .zshrc configuration file
 [ -f ${HOME}/.zshrc.local ] && source ${HOME}/.zshrc.local
+
+
+export PATH=/home/delta/torch/install/bin:$PATH  # Added automatically by torch-dist
+export LD_LIBRARY_PATH=/home/delta/torch/install/lib:$LD_LIBRARY_PATH  # Added automatically by torch-dist
+export DYLD_LIBRARY_PATH=/home/delta/torch/install/lib:$DYLD_LIBRARY_PATH  # Added automatically by torch-dist

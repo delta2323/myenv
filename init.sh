@@ -7,7 +7,7 @@ function symlink() {
     if [ -a $HOME/$1 ]; then
 	mv $HOME/$1 $HOME/$1.bak
     fi
-    ln -s $HOME/myenv/$1 $HOME/$1
+    ln -s $HOME/.myenv/$1 $HOME/$1
     return 0
 }
 
@@ -15,7 +15,7 @@ function hard_copy() {
     if [ -f $HOME/$1 ]; then
 	return 0
     fi
-    cp $HOME/myenv/$1 $HOME/$1
+    cp $HOME/.myenv/$1 $HOME/$1
     return 0
 }
 

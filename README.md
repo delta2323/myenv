@@ -18,7 +18,7 @@ Usage
 
 ```
 $ cd $HOME
-$ git clone git@github.com:delta2323/myenv.git
-$ cd myenv
+$ git clone git@github.com:delta2323/myenv.git .myenv
+$ cd .myenv
 $ bash init.sh
 ```
