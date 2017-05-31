@@ -33,15 +33,19 @@ symlink .screenrc
 hard_copy .zshrc.local
 
 #pyenv
-git clone git://github.com/yyuu/pyenv.git $HOME/.pyenv
-git clone https://github.com/yyuu/pyenv-pip-rehash.git $HOME/.pyenv/plugins/pyenv-pip-rehash
-git clone https://github.com/yyuu/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
+git clone https://github.com/yyuu/pyenv.git $HOME/.pyenv
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> $HOME/.zshrc.local
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> $HOME/.zshrc.local
+echo 'eval "$(pyenv init -)"' >> $HOME/.zshrc.local
+source ~/.zshrc
 
-pyenv install 2.7.9
-pyenv install 3.4.3
-exec $SHELL
-pyenv virtualenv 2.7.9 pyenv-2.7.9
-pyenv virtualenv 3.4.3 pyenv-3.4.3
+pyenv install anaconda3-4.3.0
+pyenv rehash
+pyenv global anaconda3-4.3.0
+echo 'export PATH="$PYENV_ROOT/versions/anaconda3-2.5.0/bin/:$PATH"' >> $HOME/.zshrc.local
+source ~/.zshrc
+conda update conda
+
 
 #rbenv
 git clone https://github.com/sstephenson/rbenv.git $HOME/.rbenv
