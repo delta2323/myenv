@@ -47,7 +47,7 @@ pyenv rehash
 pyenv global anaconda3-4.3.0
 echo 'export PATH="$PYENV_ROOT/versions/anaconda3-2.5.0/bin/:$PATH"' >> $HOME/.zshrc.local
 source ~/.zshrc
-conda update conda
+yes | conda update conda
 
 yes | conda create -n anaconda2 python=2.7 anaconda
 yes | conda create -n anaconda3 python=3.6 anaconda
