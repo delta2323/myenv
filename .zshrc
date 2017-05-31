@@ -165,3 +165,5 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 [ -f ${HOME}/.zshrc.local ] && source ${HOME}/.zshrc.local
 
 
+alias activate="$HOME/.pyenv/versions/anaconda3-4.3.0/bin/activate"
+alias deactivate="$HOME/.pyenv/versions/anaconda3-4.3.0/bin/deactivate"
