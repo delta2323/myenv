@@ -6,4 +6,4 @@ PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 export PATH=$HOME/local/bin:$HOME/.local/bin:$PATH
 export PREFIX=$HOME/local:$HOME/.local:$PREFIX
 
-pyenv activate pyenv-2.7.9
+source activate anaconda3
