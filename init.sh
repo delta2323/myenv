@@ -35,7 +35,7 @@ hard_copy .zshrc.local
 git config --global user.email "oono@preferred.jp"
 git config --global user.name "Kenta Oono"
 
-#pyenv
+# pyenv + anaconda
 git clone https://github.com/yyuu/pyenv.git $HOME/.pyenv
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> $HOME/.zshrc.local
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> $HOME/.zshrc.local
@@ -45,9 +45,13 @@ source ~/.zshrc
 yes | pyenv install anaconda3-4.3.0
 pyenv rehash
 pyenv global anaconda3-4.3.0
-echo 'export PATH="$PYENV_ROOT/versions/anaconda3-4.3.0/bin/:$PATH"' >> $HOME/.zshrc.local
+echo 'export PATH="$PYENV_ROOT/versions/anaconda3-4.3.0/bin/:$PATH"' >> $HOME/.zshrc
 source ~/.zshrc
 yes | conda update conda
 
 yes | conda create -n anaconda2 python=2.7 anaconda
 yes | conda create -n anaconda3 python=3.6 anaconda
+
+# cudnn env
+pip install cudnnenv
+

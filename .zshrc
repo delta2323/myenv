@@ -150,20 +150,35 @@ jfbterm-color)
     ;;
 esac
 
-## pyenv
+# pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 if which pyenv > /dev/null; then
     eval "$(pyenv init -)"
 fi
 
-## rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export PATH="$PYENV_ROOT/versions/anaconda3-4.3.0/bin/:$PATH"
+
+# anaconda
+alias activate="$HOME/.pyenv/versions/anaconda3-4.3.0/bin/activate"
+alias deactivate="$HOME/.pyenv/versions/anaconda3-4.3.0/bin/deactivate"
+
+# CUDA
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+
+# cuDNN
+export LD_LIBRARY_PATH=~/.cudnn/active/cuda/lib64:$LD_LIBRARY_PATH
+export CPATH=~/.cudnn/active/cuda/include:$CPATH
+export LIBRARY_PATH=~/.cudnn/active/cuda/lib64:$LIBRARY_PATH
+
+# golang
+export GOROOT=$HOME/go
+export GOPATH=$HOME/dev/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 ## load user .zshrc configuration file
 [ -f ${HOME}/.zshrc.local ] && source ${HOME}/.zshrc.local
 
 
-alias activate="$HOME/.pyenv/versions/anaconda3-4.3.0/bin/activate"
-alias deactivate="$HOME/.pyenv/versions/anaconda3-4.3.0/bin/deactivate"
