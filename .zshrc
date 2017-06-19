@@ -178,7 +178,10 @@ export GOROOT=$HOME/go
 export GOPATH=$HOME/dev/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
+# local
+export LD_LIBRARY_PATH=$HOME/local/lib:$LD_LIBRARY_PATH
+export CPATH=$HOME/local/include:$CPATH
+export LIBRARY_PATH=$HOME/local/lib:$LIBRARY_PATH
+
 ## load user .zshrc configuration file
 [ -f ${HOME}/.zshrc.local ] && source ${HOME}/.zshrc.local
-
-
