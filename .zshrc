@@ -169,9 +169,9 @@ export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 # cuDNN
-export LD_LIBRARY_PATH=~/.cudnn/active/cuda/lib64:$LD_LIBRARY_PATH
-export CPATH=~/.cudnn/active/cuda/include:$CPATH
-export LIBRARY_PATH=~/.cudnn/active/cuda/lib64:$LIBRARY_PATH
+export LD_LIBRARY_PATH=$HOME/.cudnn/active/cuda/lib64:$LD_LIBRARY_PATH
+export CPATH=$HOME/.cudnn/active/cuda/include:$CPATH
+export LIBRARY_PATH=$HOME/.cudnn/active/cuda/lib64:$LIBRARY_PATH
 
 # golang
 export GOROOT=$HOME/go
