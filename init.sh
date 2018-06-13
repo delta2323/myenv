@@ -42,9 +42,9 @@ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> $HOME/.zshrc.local
 echo 'eval "$(pyenv init -)"' >> $HOME/.zshrc.local
 source ~/.zshrc
 
-yes | pyenv install anaconda3-4.5.4
+yes | pyenv install anaconda3-4.3.0
 pyenv rehash
-pyenv global anaconda3-4.5.4
+pyenv global anaconda3-4.3.0
 echo 'export PATH="$PYENV_ROOT/versions/anaconda3-4.3.0/bin/:$PATH"' >> $HOME/.zshrc
 source ~/.zshrc
 yes | conda update conda
