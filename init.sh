@@ -49,7 +49,6 @@ echo 'export PATH="$PYENV_ROOT/versions/miniconda3-4.3.30/bin/:$PATH"' >> $HOME/
 source ~/.zshrc
 yes | conda update conda
 
-yes | conda create -n anaconda2 python=2.7 anaconda
 yes | conda create -n anaconda3 python=3.8 anaconda
 
 # cudnn env
