@@ -49,7 +49,6 @@ echo 'export PATH="$PYENV_ROOT/versions/anaconda3-5.3.1/bin/:$PATH"' >> $HOME/.z
 source ~/.zshrc
 yes | conda update conda
 
-yes | conda create -n anaconda2 python=2.7 anaconda
 yes | conda create -n anaconda3 python=3.8 anaconda
 
 # cudnn env
