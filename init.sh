@@ -42,15 +42,15 @@ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> $HOME/.zshrc.local
 echo 'eval "$(pyenv init -)"' >> $HOME/.zshrc.local
 source ~/.zshrc
 
-yes | pyenv install anaconda3-5.2.0
+yes | pyenv install anaconda3-5.3.1
 pyenv rehash
-pyenv global anaconda3-5.2.0
-echo 'export PATH="$PYENV_ROOT/versions/anaconda3-5.2.0/bin/:$PATH"' >> $HOME/.zshrc
+pyenv global anaconda3-5.3.1
+echo 'export PATH="$PYENV_ROOT/versions/anaconda3-5.3.1/bin/:$PATH"' >> $HOME/.zshrc
 source ~/.zshrc
 yes | conda update conda
 
 yes | conda create -n anaconda2 python=2.7 anaconda
-yes | conda create -n anaconda3 python=3.6 anaconda
+yes | conda create -n anaconda3 python=3.8 anaconda
 
 # cudnn env
 pip install cudnnenv
