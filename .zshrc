@@ -158,11 +158,11 @@ if which pyenv > /dev/null; then
 fi
 
 
-export PATH="$PYENV_ROOT/versions/anaconda3-4.3.0/bin/:$PATH"
+export PATH="$PYENV_ROOT/versions/miniconda3-4.3.30/bin/:$PATH"
 
 # anaconda
-alias activate="$HOME/.pyenv/versions/anaconda3-4.3.0/bin/activate"
-alias deactivate="$HOME/.pyenv/versions/anaconda3-4.3.0/bin/deactivate"
+alias activate="$HOME/.pyenv/versions/miniconda3-4.3.30/bin/activate"
+alias deactivate="$HOME/.pyenv/versions/miniconda3-4.3.30/bin/deactivate"
 
 # CUDA
 export PATH=/usr/local/cuda/bin:$PATH
