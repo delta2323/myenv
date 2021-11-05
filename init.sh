@@ -50,6 +50,3 @@ source ~/.zshrc
 yes | conda update conda
 
 yes | conda create -n anaconda3 python=3.9 anaconda
-
-# cudnn env
-pip install cudnnenv
