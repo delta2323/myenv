@@ -42,15 +42,11 @@ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> $HOME/.zshrc.local
 echo 'eval "$(pyenv init -)"' >> $HOME/.zshrc.local
 source ~/.zshrc
 
-yes | pyenv install miniconda3-4.3.30
+yes | pyenv install miniconda3-latest
 pyenv rehash
-pyenv global miniconda3-4.3.30
-echo 'export PATH="$PYENV_ROOT/versions/miniconda3-4.3.30/bin/:$PATH"' >> $HOME/.zshrc
+pyenv global miniconda3-latest
+echo 'export PATH="$PYENV_ROOT/versions/miniconda3-latest/bin/:$PATH"' >> $HOME/.zshrc
 source ~/.zshrc
 yes | conda update conda
 
-yes | conda create -n anaconda3 python=3.8 anaconda
-
-# cudnn env
-pip install cudnnenv
-
+yes | conda create -n anaconda3 python=3.9 anaconda
